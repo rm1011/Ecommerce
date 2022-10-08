@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Tazas Tienda</title>
+</head>
+
+<body class="overflow-hidden">
+
+    <header class="text-black shadow-lg ">
+        <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row md:items-center">
+            <div class="flex title-font font-medium items-center justify-between text-gray-900 mb-4 md:mb-0">
+                <a class="flex items-center">
+                    <img class="h-20" src="./img/logo.png" alt="logo" />
+                    <span class="ml-3 text-xl">Tazas Especiales</span>
+                </a>
+                <span class="text-4xl cursor-pointer md:hidden">
+                    <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+                </span>
+            </div>
+
+            <nav class="flex flex-col md:flex-row md:ml-auto md:items-center mx-6 md:mx-0 
+                z-[-1] md:z-10 md:static  md:opacity-0 opacity-100
+                top-[-400px] transition-all ease-in-out">
+                <a class="md:mr-5 hover:text-[#E0542E] font-bold cursor-pointer">Inicio</a>
+                <a class="md:mr-5 hover:text-[#E0542E] font-bold cursor-pointer">Novedades</a>
+                <a class="md:mr-5 hover:text-[#E0542E] font-bold cursor-pointer">Cerámia</a>
+                <a class="md:mr-5 hover:text-[#E0542E] font-bold cursor-pointer">Vidrio</a>
+                <a class="md:mr-5 hover:text-[#E0542E] font-bold cursor-pointer">Dia de la madre</a>
+                <button
+                    class="bg-orange-400 hover:bg-orange-600 duration-500 rounded-lg p-2 text-white font-bold mt-2 md:mt-0">
+                    Contacto
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container mx-auto my-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="flex justify-center">
+            <img class="w-full" src=" ./img/tazas/tazas_personajes2.jpg">
+        </div>
+        <div class="flex justify-center">
+            <img class="w-full" src="./img/tazas/tazas_mariposa.jpeg">
+        </div>
+        <div class="flex justify-center">
+            <img class="w-full" src="./img/tazas/tazas_personajes.jpeg">
+        </div>
+        <div class="flex justify-center">
+            <img class="w-full" src="./img/tazas/taza_rosa_oro.jpeg">
+        </div>
+        <div class="flex justify-center">
+            <img class="w-full" src="./img/tazas/tazas_personaes3.jpeg">
+        </div>
+        <div class="flex justify-center">
+            <img class="w-full" src="./img/tazas/tazas_marvel.jpeg">
+        </div>
+        <div class="flex justify-center">
+            <img class="w-full" src="./img/tazas/taza_mesi.jpeg">
+        </div>
+        <div class="flex justify-center">
+            <img class="w-full" src="./img/tazas/tazas_tiktok.jpg">
+        </div>
+    </section>
+
+
+    <!-- <ion-icon name="close-outline"></ion-icon> -->
+    <script>
+        function Menu(e) {
+
+            let list = document.querySelector('nav')
+            e.name === 'menu-outline' ?
+                (e.name = 'close-outline', list.classList.add('top-[80px]')) :
+                (e.name = 'menu-outline', list.classList.remove('top-[80px]'))
+        }
+    </script>
+
+</body>
+
+</html>
