@@ -18,17 +18,38 @@
                     <img class="h-20" src="./img/logo.png" alt="logo" />
                     <span class="ml-3 text-xl font-bold">Tazas Especiales</span>
                 </a>
-                <ul class="flex justify-center sm:mt-4">
+                <ul class="flex justify-center sm:mt-4 mr-80">
                     <li class="mx-3 font-bold hover:text-orange-600"><a href="#">Inicio</a></li>
                     <li class="mx-3 font-bold hover:text-orange-600"><a href="#">Tienda</a></li>
                     <li class="mx-3 font-bold hover:text-orange-600"><a href="#">Blog</a></li>
-                    <li class="mx-3 font-bold"><img class="w-6" src="./img/carrito-de-compras.png"></li>
+                    <li class="mx-3 font-bold relative">
+                        <img class="w-6" src="./img/carrito-de-compras.png">
+                        <div class="absolute w-[400px] h-[300px] shadow-lg bg-white px-8 flex flex-col" id="carrito">
+                            <table class="mb-10">
+                                <thead class="border-b-2 border-gray-300">
+                                    <tr>
+                                        <th class="p-3 font-bold">Imagen</th>
+                                        <th class="p-3 font-bold">Nombre</th>
+                                        <th class="p-3 font-bold">Precio</th>
+                                        <th class="p-3 font-bold">Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <a class="border-2 border-gray-400 p-3 uppercase cursor-pointer h-8 text-sm w-full flex justify-center items-center ali"
+                                href="#">Vaciar
+                                Carrito</a>
+                        </div>
+                    </li>
+
                 </ul>
+
             </div>
         </nav>
+
     </header>
 
-    <section class="container mx-auto my-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section class="container mx-auto my-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 z-10">
         <div
             class="flex justify-center shadow-lg rounded-xl m-6 lg:mx-0 transition ease-in-out duration-300 hover:scale-105">
             <div class="p-4">
