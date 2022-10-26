@@ -19,38 +19,37 @@
                     <img class="h-20" src="./img/logo.png" alt="logo" />
                     <span class="ml-3 text-xl font-bold">Tazas Especiales</span>
                 </a>
-                <ul class="flex justify-center sm:mt-4 mr-80">
+                <ul class="flex justify-center sm:mt-4">
                     <li class="mx-3 font-bold hover:text-orange-600"><a href="#">Inicio</a></li>
                     <li class="mx-3 font-bold hover:text-orange-600"><a href="#">Tienda</a></li>
                     <li class="mx-3 font-bold hover:text-orange-600"><a href="#">Blog</a></li>
-                    <li class="mx-3 font-bold relative">
-                        <img class="w-6" src="./img/carrito-de-compras.png">
-                        <!-- <div class="absolute w-[400px] h-[300px] shadow-lg bg-white px-8 flex flex-col" id="carrito">
-                            <table class="mb-10">
-                                <thead class="border-b-2 border-gray-300">
-                                    <tr>
-                                        <th class="p-3 font-bold">Imagen</th>
-                                        <th class="p-3 font-bold">Nombre</th>
-                                        <th class="p-3 font-bold">Precio</th>
-                                        <th class="p-3 font-bold">Cantidad</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                            <a class="border-2 border-gray-400 p-3 uppercase cursor-pointer h-8 text-sm w-full flex justify-center items-center ali"
-                                href="#">Vaciar
-                                Carrito</a>
-                        </div> -->
+                    <li class="mx-3 font-bold relative cursor-pointer">
+                        <img class="w-6 transition ease-in-out duration-300 hover:scale-125"
+                            src="./img/carrito-de-compras.png" id="imgCarrito">
                     </li>
-
                 </ul>
-
             </div>
         </nav>
-
     </header>
 
-    <section class="container mx-auto my-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 z-10">
+    <div class="fixed w-5/12 h-1/2 shadow-lg bg-gray-200 px-8 flex flex-col right-full z-30" id="carrito">
+        <table class="mb-10" id="table-carrito">
+            <thead class="border-b-2 border-gray-300">
+                <tr>
+                    <th class="p-3 font-bold">Imagen</th>
+                    <th class="p-3 font-bold">Nombre</th>
+                    <th class="p-3 font-bold">Precio</th>
+                    <th class="p-3 font-bold">Cantidad</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <a class="border-2 border-gray-400 bg-orange-600 text-white font-bold p-3 uppercase cursor-pointer h-8 text-sm w-full flex justify-center items-center"
+            href="#" id="vaciar-carrito">Vaciar Carrito</a>
+    </div>
+
+    <section class="container mx-auto my-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 z-10"
+        id="lista-cursos">
         <div
             class="flex justify-center border-2 shadow-lg bg-orange-100 rounded-xl m-6 lg:mx-0 transition ease-in-out duration-300 hover:scale-105">
             <div class="p-4">
@@ -63,8 +62,8 @@
                             <span class="text-cyan-600 font-bold text-lg"> S/. 20
                             </span>
                         </h4>
-                        <div class="ml-2">
-                            <img class="w-6" src="./img/carrito-de-compras.png">
+                        <div class="ml-2 id" data-id="1">
+                            <img class="w-6 cursor-pointer agregar-curso" src="./img/carrito-de-compras.png">
                         </div>
                     </div>
                 </div>
@@ -80,8 +79,8 @@
                         <h4 class="text-base text-orange-600 font-bold">Desde: <span
                                 class="text-cyan-600 font-bold text-lg"> S/. 40
                             </span></h4>
-                        <div class="ml-2">
-                            <img class="w-6" src="./img/carrito-de-compras.png">
+                        <div class="ml-2 id" data-id="2">
+                            <img class="w-6 cursor-pointer agregar-curso" src="./img/carrito-de-compras.png">
                         </div>
                     </div>
                 </div>
@@ -97,8 +96,8 @@
                         <h4 class="text-base text-orange-600 font-bold">Desde: <span
                                 class="text-cyan-600 font-bold text-lg"> S/. 30
                             </span></h4>
-                        <div class="ml-2">
-                            <img class="w-6" src="./img/carrito-de-compras.png">
+                        <div class="ml-2 id" data-id="3">
+                            <img class="w-6 cursor-pointer agregar-curso" src="./img/carrito-de-compras.png">
                         </div>
                     </div>
                 </div>
@@ -114,8 +113,8 @@
                         <h4 class="text-base text-orange-600 font-bold">Desde: <span
                                 class="text-cyan-600 font-bold text-lg"> S/. 20
                             </span></h4>
-                        <div class="ml-2">
-                            <img class="w-6" src="./img/carrito-de-compras.png">
+                        <div class="ml-2 id" data-id="4">
+                            <img class="w-6 cursor-pointer agregar-curso" src="./img/carrito-de-compras.png">
                         </div>
                     </div>
                 </div>
@@ -131,8 +130,8 @@
                         <h4 class="text-base text-orange-600 font-bold">Desde: <span
                                 class="text-cyan-600 font-bold text-lg"> S/. 50
                             </span></h4>
-                        <div class="ml-2">
-                            <img class="w-6" src="./img/carrito-de-compras.png">
+                        <div class="ml-2 id" data-id="5">
+                            <img class="w-6 cursor-pointer agregar-curso" src="./img/carrito-de-compras.png">
                         </div>
                     </div>
                 </div>
@@ -148,8 +147,8 @@
                         <h4 class="text-base text-orange-600 font-bold">Desde: <span
                                 class="text-cyan-600 font-bold text-lg"> S/. 40
                             </span> </h4>
-                        <div class="ml-2">
-                            <img class="w-6" src="./img/carrito-de-compras.png">
+                        <div class="ml-2 id" data-id="6">
+                            <img class="w-6 cursor-pointer agregar-curso" src="./img/carrito-de-compras.png">
                         </div>
                     </div>
                 </div>
@@ -166,8 +165,8 @@
                                 class="text-cyan-600 font-bold text-lg"> S/.
                                 100
                             </span></h4>
-                        <div class="ml-2">
-                            <img class="w-6" src="./img/carrito-de-compras.png">
+                        <div class="ml-2 id" data-id="7">
+                            <img class="w-6 cursor-pointer agregar-curso" src="./img/carrito-de-compras.png">
                         </div>
                     </div>
                 </div>
@@ -183,8 +182,8 @@
                         <h4 class="text-base text-orange-600 font-bold">Desde: <span
                                 class="text-cyan-600 font-bold text-lg"> S/. 80
                             </span></h4>
-                        <div class="ml-2">
-                            <img class="w-6" src="./img/carrito-de-compras.png">
+                        <div class="ml-2 id" data-id="8">
+                            <img class="w-6 cursor-pointer agregar-curso" src="./img/carrito-de-compras.png">
                         </div>
                     </div>
                 </div>
@@ -192,6 +191,8 @@
         </div>
     </section>
 
+
+    <script src="./js/car_bowl.js"></script>
 </body>
 
 </html>
