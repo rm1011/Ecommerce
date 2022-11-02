@@ -1,13 +1,10 @@
-
 const btnImgCarrito = document.querySelector('#imgCarrito');
 const carrito = document.querySelector('#carrito');
-const contenerdorCarrito = document.querySelector('#table-carrito tbody');
+const contenedorCarrito = document.querySelector('#table-carrito tbody');
 const variarCarrito = document.querySelector('#vaciar-carrito');
 const listaCursos = document.querySelector('#lista-cursos');
 
-
-
-
+let  tazasCarrito = [];
 
 cargarEventListeners();
 
@@ -17,7 +14,6 @@ function cargarEventListeners(){
 
     // Agregando producto
     listaCursos.addEventListener('click', agregarItem);
-
 }
 
 
@@ -58,6 +54,30 @@ function leerDatosItem(item) {
         id: item.querySelector('.id').getAttribute('data-id'),
         cantidad: 1,
     }
+    // console.log(infoItem);
 
-    console.log(infoItem);
+
+    tazasCarrito = [ ...tazasCarrito, infoItem ]
+    console.log(tazasCarrito);
+
+    pintarHtml();
+}
+
+
+function pintarHtml() {
+    
+    tazasCarrito.forEach ( taza => {
+        const { imagen, nombreItem, precio, cantidad } = taza;
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td class="flex justify-center"> <img src="${imagen}" style="height: 80px;" >  </td>
+            <td class="text-center"> ${nombreItem} </td>
+            <td class="text-center"> ${precio} </td>
+            <td class="text-center"> ${cantidad} </td>
+        `;
+
+
+        contenedorCarrito.appendChild(row);
+    })
+
 }
