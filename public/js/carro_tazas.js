@@ -57,8 +57,25 @@ function leerDatosItem(item) {
     // console.log(infoItem);
 
 
-    tazasCarrito = [ ...tazasCarrito, infoItem ]
-    console.log(tazasCarrito);
+    const existe =  tazasCarrito.some( taza => taza.id === infoItem.id );
+    console.log(existe);
+
+    if (existe) {
+        const tazas = tazasCarrito.map( taza => {
+            if ( taza.id === infoItem.id) {
+                taza.cantidad++;
+                return taza;
+            } else {
+                return taza;
+            }
+        });
+        tazasCarrito = [ ...tazas];
+    } else{
+        tazasCarrito = [ ...tazasCarrito, infoItem ]
+    }
+
+    // tazasCarrito = [ ...tazasCarrito, infoItem ]
+    // console.log(tazasCarrito);
 
     pintarHtml();
 }
@@ -66,9 +83,12 @@ function leerDatosItem(item) {
 
 function pintarHtml() {
     
+    limpiarHTML();
+
     tazasCarrito.forEach ( taza => {
         const { imagen, nombreItem, precio, cantidad } = taza;
         const row = document.createElement('tr');
+        // row.classList.add("mt-4");
         row.innerHTML = `
             <td class="flex justify-center"> <img src="${imagen}" style="height: 80px;" >  </td>
             <td class="text-center"> ${nombreItem} </td>
@@ -76,8 +96,14 @@ function pintarHtml() {
             <td class="text-center"> ${cantidad} </td>
         `;
 
-
         contenedorCarrito.appendChild(row);
     })
+
+}
+
+function limpiarHTML(){
+    while (contenedorCarrito.firstChild) {
+        contenedorCarrito.removeChild(contenedorCarrito.firstChild)
+    }
 
 }
